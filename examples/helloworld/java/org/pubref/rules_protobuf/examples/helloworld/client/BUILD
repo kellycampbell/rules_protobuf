@@ -1,3 +1,6 @@
+load("@org_pubref_rules_protobuf//java:deps.bzl", "DEPS")
+
+
 java_test(
     name = "netty_test",
     size = "small",
@@ -5,11 +8,11 @@ java_test(
     tags = ["exclusive"],
     test_class = "org.pubref.rules_protobuf.examples.helloworld.client.HelloWorldClientTest",
     runtime_deps = [
-        "//java:netty_runtime_deps",
+        "@org_pubref_rules_protobuf//java:netty_runtime_deps",
     ],
     deps = [
         ":client",
-        "//examples/helloworld/java/org/pubref/rules_protobuf/examples/helloworld/server",
+        "//helloworld/java/org/pubref/rules_protobuf/examples/helloworld/server",
         "@junit_junit_4//jar",
     ],
 )
@@ -19,7 +22,7 @@ java_binary(
     main_class = "org.pubref.rules_protobuf.examples.helloworld.client.HelloWorldClient",
     runtime_deps = [
         ":client",
-        "//java:netty_runtime_deps",
+        "@org_pubref_rules_protobuf//java:netty_runtime_deps",
     ],
 )
 
@@ -28,6 +31,6 @@ java_library(
     srcs = ["HelloWorldClient.java"],
     deps = [
         # This rule automatically exports //java:grpc_compiletime_deps.
-        "//examples/helloworld/proto:java",
+        "//helloworld/proto:java",
     ],
 )

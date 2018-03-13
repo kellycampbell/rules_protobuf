@@ -1,5 +1,7 @@
 package(default_visibility = ["//visibility:public"])
 
+load("@org_pubref_rules_protobuf//java:deps.bzl", "DEPS")
+
 java_test(
     name = "netty_test",
     size = "small",
@@ -7,7 +9,7 @@ java_test(
     tags = ["exclusive"],  # Address already in use if another server being tested has same port
     test_class = "org.pubref.rules_protobuf.examples.helloworld.server.HelloWorldServerTest",
     runtime_deps = [
-        "//java:netty_runtime_deps",
+        "@org_pubref_rules_protobuf//java:netty_runtime_deps",
     ],
     deps = [
         ":server",
@@ -20,7 +22,7 @@ java_binary(
     main_class = "org.pubref.rules_protobuf.examples.helloworld.server.HelloWorldServer",
     runtime_deps = [
         ":server",
-        "//java:netty_runtime_deps",
+        "@org_pubref_rules_protobuf//java:netty_runtime_deps",
     ],
 )
 
@@ -29,6 +31,6 @@ java_library(
     srcs = ["HelloWorldServer.java"],
     deps = [
         # This rule automatically exports //java:grpc_compiletime_deps.
-        "//examples/helloworld/proto:java",
+        "//helloworld/proto:java",
     ],
 )

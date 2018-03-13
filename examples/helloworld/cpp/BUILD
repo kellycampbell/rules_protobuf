@@ -21,12 +21,12 @@ cc_binary(
 cc_binary(
     name = "server",
     srcs = ["greeter_server.cc"],
-    deps = ["//examples/helloworld/proto:cpp"],
+    deps = ["//helloworld/proto:cpp"],
 )
 
 cc_library(
     name = "clientlib",
     srcs = ["greeter_client.cc"],
     hdrs = ["greeter_client.h"],
-    deps = ["//examples/helloworld/proto:cpp"],
+    deps = ["//helloworld/proto:cpp"],
 )

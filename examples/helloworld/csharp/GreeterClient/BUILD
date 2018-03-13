@@ -1,5 +1,5 @@
 load("@io_bazel_rules_dotnet//dotnet:csharp.bzl", "csharp_binary", "csharp_nunit_test")
-load("//csharp:rules.bzl", "csharp_proto_library")
+load("@org_pubref_rules_protobuf//csharp:rules.bzl", "csharp_proto_library")
 
 csharp_binary(
     name = "GreeterClient",
@@ -17,9 +17,9 @@ csharp_binary(
 csharp_proto_library(
     name = "Helloworld",
     proto_deps = [
-        "//examples/proto:csharp",
+        "//proto:csharp",
     ],
-    protos = ["//examples/helloworld/proto:protos"],
+    protos = ["//helloworld/proto:protos"],
     verbose = 0,
     with_grpc = True,
 )

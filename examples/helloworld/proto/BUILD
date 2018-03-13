@@ -1,15 +1,15 @@
 package(default_visibility = ["//visibility:public"])
 
-load("//cpp:rules.bzl", "cc_proto_library")
-load("//csharp:rules.bzl", "csharp_proto_library")
-load("//go:rules.bzl", "go_proto_library")
-load("//gogo:rules.bzl", "gogo_proto_library")
-load("//java:rules.bzl", "java_proto_library")
-load("//node:rules.bzl", "node_proto_library")
-load("//objc:rules.bzl", "objc_proto_compile")
-load("//protobuf:rules.bzl", "proto_compile")
-load("//python:rules.bzl", "py_proto_library")
-load("//ruby:rules.bzl", "ruby_proto_compile")
+load("@org_pubref_rules_protobuf//cpp:rules.bzl", "cc_proto_library")
+load("@org_pubref_rules_protobuf//csharp:rules.bzl", "csharp_proto_library")
+load("@org_pubref_rules_protobuf//go:rules.bzl", "go_proto_library")
+load("@org_pubref_rules_protobuf//gogo:rules.bzl", "gogo_proto_library")
+load("@org_pubref_rules_protobuf//java:rules.bzl", "java_proto_library")
+load("@org_pubref_rules_protobuf//node:rules.bzl", "node_proto_library")
+load("@org_pubref_rules_protobuf//objc:rules.bzl", "objc_proto_compile")
+load("@org_pubref_rules_protobuf//protobuf:rules.bzl", "proto_compile")
+load("@org_pubref_rules_protobuf//python:rules.bzl", "py_proto_library")
+load("@org_pubref_rules_protobuf//ruby:rules.bzl", "ruby_proto_compile")
 
 filegroup(
     name = "protos",
@@ -19,7 +19,7 @@ filegroup(
 cc_proto_library(
     name = "cpp",
     proto_deps = [
-        "//examples/proto:cpp",
+        "//proto:cpp",
     ],
     protos = [":protos"],
     verbose = 0,
@@ -29,7 +29,7 @@ cc_proto_library(
 csharp_proto_library(
     name = "Helloworld",
     proto_deps = [
-        "//examples/proto:csharp",
+        "//proto:csharp",
     ],
     protos = [":protos"],
     verbose = 0,
@@ -39,7 +39,7 @@ csharp_proto_library(
 go_proto_library(
     name = "go",
     proto_deps = [
-        "//examples/proto:go_default_library",
+        "//proto:go_default_library",
     ],
     protos = [":protos"],
     verbose = 0,
@@ -49,7 +49,7 @@ go_proto_library(
 java_proto_library(
     name = "java",
     proto_deps = [
-        "//examples/proto:java",
+        "//proto:java",
     ],
     protos = [":protos"],
     verbose = 0,
@@ -71,7 +71,7 @@ java_proto_library(
 node_proto_library(
     name = "node",
     proto_deps = [
-        "//examples/proto:node",
+        "//proto:node",
     ],
     protos = [":protos"],
     verbose = 0,
@@ -83,14 +83,14 @@ objc_proto_compile(
     protos = [":protos"],
     with_grpc = True,
     deps = [
-        "//examples/proto:objc",
+        "//proto:objc",
     ],
 )
 
 py_proto_library(
     name = "py",
     proto_deps = [
-        "//examples/proto:py",
+        "//proto:py",
     ],
     protos = [
         ":protos",
@@ -103,6 +103,6 @@ ruby_proto_compile(
     protos = [":protos"],
     with_grpc = True,
     deps = [
-        "//examples/proto:ruby",
+        "//proto:ruby",
     ],
 )

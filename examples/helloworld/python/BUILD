@@ -8,7 +8,7 @@ py_binary(
         "greeter_client.py",
     ],
     deps = [
-        "//examples/helloworld/proto:py",
+        "//helloworld/proto:py",
         requirement("grpcio"),
     ],
 )
@@ -35,7 +35,7 @@ py_library(
         "greeter_server.py",
     ],
     deps = [
-        "//examples/helloworld/proto:py",
+        "//helloworld/proto:py",
         requirement("grpcio"),
     ],
 )

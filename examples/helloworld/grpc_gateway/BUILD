@@ -2,7 +2,7 @@ package(default_visibility = ["//visibility:public"])
 
 load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_binary", "go_test")
 load(
-    "//grpc_gateway:rules.bzl",
+    "@org_pubref_rules_protobuf//grpc_gateway:rules.bzl",
     "grpc_gateway_proto_compile",
     "grpc_gateway_proto_library",
     "grpc_gateway_swagger_compile",
@@ -24,6 +24,7 @@ grpc_gateway_binary(
     name = "greeter",
     srcs = ["greeter.go"],
     protos = ["helloworld.proto"],
+    verbose = 1,
 )
 
 # grpc_gateway_binary rule above is a shorthand equivalent for the

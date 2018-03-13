@@ -1,15 +1,15 @@
 package(default_visibility = ["//visibility:public"])
 
-load("//closure:rules.bzl", "closure_proto_library")
-load("//cpp:rules.bzl", "cc_proto_library")
-load("//csharp:rules.bzl", "csharp_proto_compile", "csharp_proto_library")
-load("//go:rules.bzl", "go_proto_library")
-load("//java:rules.bzl", "java_proto_library")
-load("//node:rules.bzl", "node_proto_compile", "node_proto_library")
-load("//objc:rules.bzl", "objc_proto_compile")
-load("//python:rules.bzl", "py_proto_library")
-load("//protobuf:rules.bzl", "proto_compile")
-load("//ruby:rules.bzl", "ruby_proto_compile")
+load("@org_pubref_rules_protobuf//closure:rules.bzl", "closure_proto_library")
+load("@org_pubref_rules_protobuf//cpp:rules.bzl", "cc_proto_library")
+load("@org_pubref_rules_protobuf//csharp:rules.bzl", "csharp_proto_compile", "csharp_proto_library")
+load("@org_pubref_rules_protobuf//go:rules.bzl", "go_proto_library")
+load("@org_pubref_rules_protobuf//java:rules.bzl", "java_proto_library")
+load("@org_pubref_rules_protobuf//node:rules.bzl", "node_proto_compile", "node_proto_library")
+load("@org_pubref_rules_protobuf//objc:rules.bzl", "objc_proto_compile")
+load("@org_pubref_rules_protobuf//python:rules.bzl", "py_proto_library")
+load("@org_pubref_rules_protobuf//protobuf:rules.bzl", "proto_compile")
+load("@org_pubref_rules_protobuf//ruby:rules.bzl", "ruby_proto_compile")
 
 filegroup(
     name = "protos",

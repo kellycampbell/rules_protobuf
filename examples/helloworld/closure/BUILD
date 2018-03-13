@@ -2,13 +2,13 @@ package(default_visibility = ["//visibility:public"])
 
 load("@io_bazel_rules_closure//closure:defs.bzl", "closure_js_library")
 load("@io_bazel_rules_closure//closure:defs.bzl", "closure_js_test")
-load("//closure:rules.bzl", "closure_proto_library")
+load("@org_pubref_rules_protobuf//closure:rules.bzl", "closure_proto_library")
 
 closure_proto_library(
     name = "protolib",
     protos = [
-        "//examples/helloworld/proto:protos",
-        "//examples/proto:protos",
+        "//helloworld/proto:protos",
+        "//proto:protos",
     ],
     verbose = 0,
 )
